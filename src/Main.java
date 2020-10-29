@@ -1,24 +1,19 @@
-import Models.CrimeRecords;
-import Utilities.DBUtility;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
-import java.sql.SQLException;
-import java.util.ArrayList;
+public class Main extends Application {
 
-public class Main {
-    public static void main(String[] args) throws SQLException {
-        try {
-            //CrimeRecord c = new CrimeRecord(2000,"Manitoba","Murder",467899);
-            ArrayList<CrimeRecords> crimeRecords = new ArrayList<>();
-            DBUtility db = new DBUtility();
-            crimeRecords=db.getAllCrimeRecordsFromDB();
-            System.out.println("Year,"+"Region,"+"Type,"+"Value");
-            for(int i=0;i<80;i++){
-                System.out.println(crimeRecords.get(i).getYear()+"  "+crimeRecords.get(i).getRegion()+" "+crimeRecords.get(i).getCrimeType()+"  "+crimeRecords.get(i).getValue());
-            }
-            System.out.println();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
+    public static void main(String[] args) {
+        launch(args);
+    }
+    @Override
+    public void start(Stage stage) throws Exception {
+        Parent root = FXMLLoader.load(getClass().getResource("/Views/barGraphView.fxml"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 }

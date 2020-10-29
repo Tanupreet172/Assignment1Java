@@ -15,10 +15,14 @@ public class CrimeRecords {
         setCrimeType(crimeType);
         setRegion(region);
         setValue(value);
-        id= DBUtility.insertNewCrimeRecords(this);
 
     }
+    public CrimeRecords(String region,int value) throws SQLException {
 
+        setRegion(region);
+        setValue(value);
+
+    }
     public void setId(int id){
         if(id>0)
             this.id = id;
