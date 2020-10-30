@@ -17,8 +17,10 @@ public class CrimeRecords {
         setValue(value);
 
     }
-    public CrimeRecords(String region,int value) throws SQLException {
-
+    public CrimeRecords(int id,int year,String region,String crimeType,int value) throws SQLException {
+        setId(id);
+        setYear(year);
+        setCrimeType(crimeType);
         setRegion(region);
         setValue(value);
 
