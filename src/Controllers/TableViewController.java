@@ -67,21 +67,20 @@ public class TableViewController implements Initializable {
 
 
     private DBUtility db;
-    private ObservableList<CrimeRecords> records;
+    private ObservableList<CrimeRecords> records=FXCollections.observableArrayList();
 
     public void insertTable() throws SQLException {
         db=new DBUtility();
+        CrimeRecords c;
         for(int i=0;i<db.getAllCrimeRecordsFromDB().size();i++){
-            records = FXCollections.observableArrayList(
-                    new CrimeRecords(db.getAllCrimeRecordsFromDB().get(i).getId(),db.getAllCrimeRecordsFromDB().get(i).getYear(),
-                            db.getAllCrimeRecordsFromDB().get(i).getRegion(),
-                            db.getAllCrimeRecordsFromDB().get(i).getCrimeType(),
-                            db.getAllCrimeRecordsFromDB().get(i).getValue())
-
-                    );
-
-    }
-    }
+            c=new CrimeRecords(db.getIdAllCrimeRecordsFromDB().get(i).getId(),db.getIdAllCrimeRecordsFromDB().get(i).getYear(),
+                    db.getIdAllCrimeRecordsFromDB().get(i).getRegion(),
+                    db.getIdAllCrimeRecordsFromDB().get(i).getCrimeType(),
+                    db.getIdAllCrimeRecordsFromDB().get(i).getValue());
+                    records.add(c);
+                    //System.out.println(records);
+        }
+        }
 
 
     @Override
