@@ -9,13 +9,13 @@
 <AnchorPane prefHeight="482.0" prefWidth="716.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.TableViewController">
    <children>
       <Button fx:id="switchView" layoutX="594.0" layoutY="427.0" mnemonicParsing="false" onAction="#changeToBarGraph" text="BarGraphView" />
-      <TableView fx:id="table" layoutX="21.0" layoutY="53.0" prefHeight="356.0" prefWidth="627.0">
+      <TableView fx:id="table" layoutX="21.0" layoutY="53.0" prefHeight="356.0" prefWidth="676.0">
         <columns>
           <TableColumn fx:id="id" prefWidth="56.00000762939453" text="Id" />
-          <TableColumn fx:id="year" prefWidth="88.00006866455078" text="Year" />
-            <TableColumn fx:id="region" prefWidth="144.800048828125" text="Region" />
-            <TableColumn fx:id="crimeType" prefWidth="219.99996948242188" text="CrimeType" />
-            <TableColumn fx:id="value" prefWidth="118.4000244140625" text="Value" />
+          <TableColumn fx:id="year" prefWidth="108.00000762939453" text="Year" />
+            <TableColumn fx:id="region" prefWidth="150.4000244140625" text="Region" />
+            <TableColumn fx:id="crimeType" prefWidth="215.19992065429688" text="CrimeType" />
+            <TableColumn fx:id="value" prefWidth="145.60003662109375" text="Value" />
         </columns>
       </TableView>
    </children>
