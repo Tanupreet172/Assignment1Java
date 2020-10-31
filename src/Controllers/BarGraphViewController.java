@@ -12,6 +12,7 @@ import javafx.scene.chart.BarChart;
 import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
+import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -31,19 +32,18 @@ public class BarGraphViewController implements Initializable {
     @FXML
     private NumberAxis numberOfCases;
 
+
+    @FXML
+    private Button changeToBarGraph;
+
     @FXML
     void changeToTableview(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../Views/tableView.fxml"));
-        Parent tableViewParent = loader.load();
-
-        Scene tableViewScene = new Scene(tableViewParent);
-
-        //access the controller and call a method
-        //BarGraphViewController controller = loader.getController();
-        //controller.initialize(table.getSelectionModel().getSelectedItem());
-
-        //This line gets the Stage information
+        Parent root = loader.load();
+        root.setId("pane");
+        Scene tableViewScene = new Scene(root);
+        tableViewScene.getStylesheets().add("stylesheet.css");
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
 
         window.setScene(tableViewScene);

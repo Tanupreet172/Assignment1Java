@@ -6,7 +6,6 @@ import java.sql.*;
 import java.util.ArrayList;
 
 public class DBUtility {
-    //the user name and password should reflect YOUR system
     private static String user = "root";
     private static String password = "";
 
@@ -15,7 +14,6 @@ public class DBUtility {
     public ArrayList<CrimeRecords> getAllCrimeRecordsFromDB() throws SQLException {
         ArrayList<CrimeRecords> crimeRecords = new ArrayList<>();
 
-        //1.define connection, preparedStatement
         Connection conn = null;
         Statement statement = null;
         ResultSet resultSet = null;

@@ -49,15 +49,10 @@ public class TableViewController implements Initializable {
     void changeToBarGraph(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../Views/barGraphView.fxml"));
-        Parent tableViewParent = loader.load();
-
-        Scene tableViewScene = new Scene(tableViewParent);
-
-        //access the controller and call a method
-        //BarGraphViewController controller = loader.getController();
-        //controller.initialize(table.getSelectionModel().getSelectedItem());
-
-        //This line gets the Stage information
+        Parent root = loader.load();
+        root.setId("pane");
+        Scene tableViewScene = new Scene(root);
+        tableViewScene.getStylesheets().add("stylesheet.css");
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
 
         window.setScene(tableViewScene);
@@ -78,7 +73,6 @@ public class TableViewController implements Initializable {
                     db.getIdAllCrimeRecordsFromDB().get(i).getCrimeType(),
                     db.getIdAllCrimeRecordsFromDB().get(i).getValue());
                     records.add(c);
-                    //System.out.println(records);
         }
         }
 
@@ -96,28 +90,9 @@ public class TableViewController implements Initializable {
         region.setCellValueFactory(new PropertyValueFactory<>("region"));
         crimeType.setCellValueFactory(new PropertyValueFactory<>("crimeType"));
         value.setCellValueFactory(new PropertyValueFactory<>("value"));
-        //add your data to the table here.
         table.setItems(records);
     }
 
-    public void changeSceneToDetailedPersonView(ActionEvent event) throws IOException
-    {
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("../Views/barGraphView.fxml"));
-        Parent tableViewParent = loader.load();
-
-        Scene tableViewScene = new Scene(tableViewParent);
-
-        //access the controller and call a method
-        //BarGraphViewController controller = loader.getController();
-        //controller.initialize(table.getSelectionModel().getSelectedItem());
-
-        //This line gets the Stage information
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-
-        window.setScene(tableViewScene);
-        window.show();
-    }
 
 
 

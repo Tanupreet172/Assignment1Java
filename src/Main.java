@@ -13,9 +13,10 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/Views/barGraphView.fxml"));
-
+        root.setId("pane");
         Scene scene = new Scene(root);
         stage.getIcons().add(new Image("/Views/crimes.png"));
+
         stage.setTitle("CrimeRecords");
         scene.getStylesheets().add("stylesheet.css");
         stage.setScene(scene);
