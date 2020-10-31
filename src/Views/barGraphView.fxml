@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <?import javafx.scene.chart.BarChart?>
 <?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.NumberAxis?>
@@ -6,10 +7,9 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane prefHeight="452.0" prefWidth="621.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.BarGraphViewController">
    <children>
-      <BarChart fx:id="barChart" layoutX="29.0" layoutY="56.0" prefHeight="330.0" prefWidth="442.0">
+      <BarChart fx:id="barChart" alternativeColumnFillVisible="true" barGap="2.0" categoryGap="5.0" horizontalGridLinesVisible="false" layoutX="29.0" layoutY="16.0" prefHeight="370.0" prefWidth="562.0" title="Crime Records - 1999" verticalGridLinesVisible="false">
         <xAxis>
           <CategoryAxis fx:id="provinces" side="BOTTOM" />
         </xAxis>
@@ -17,7 +17,7 @@
           <NumberAxis fx:id="numberOfCases" side="LEFT" />
         </yAxis>
       </BarChart>
-      <Button layoutX="494.0" layoutY="396.0" mnemonicParsing="false" onAction="#changeToTableview" text="TableView" />
+      <Button layoutX="504.0" layoutY="404.0" mnemonicParsing="false" onAction="#changeToTableview" text="TableView" />
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="157.0" layoutY="111.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>
