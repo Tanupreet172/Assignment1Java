@@ -18,7 +18,7 @@ public class Main extends Application {
         stage.getIcons().add(new Image("/Views/crimes.png"));
 
         stage.setTitle("CrimeRecords");
-        scene.getStylesheets().add("stylesheet.css");
+        scene.getStylesheets().add("Views/stylesheet.css");
         stage.setScene(scene);
         stage.show();
     }

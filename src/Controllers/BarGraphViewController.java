@@ -43,7 +43,7 @@ public class BarGraphViewController implements Initializable {
         Parent root = loader.load();
         root.setId("pane");
         Scene tableViewScene = new Scene(root);
-        tableViewScene.getStylesheets().add("stylesheet.css");
+        tableViewScene.getStylesheets().add("Views/stylesheet.css");
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
 
         window.setScene(tableViewScene);
